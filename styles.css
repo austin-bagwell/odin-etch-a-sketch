@@ -1,0 +1,21 @@
+html {
+  box-sizing: border-box;
+}
+
+.sketch-container {
+  display: block;
+  border: 5px solid black;
+  max-width: 916px;
+  max-height: 916px;
+}
+
+.row {
+  display: flex;
+  flex: auto;
+}
+
+.pixel {
+  border: 1px solid black;
+  flex: auto;
+  text-align: center;
+}
