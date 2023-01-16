@@ -1,21 +1,70 @@
+/* TODO */
+/* Set row/pixel sizing dynamically -- always want to evenly fill the .sketch-container regardless of the number of pixels present or the size of the container 
+
+USE GRID?*/
+
 html {
   box-sizing: border-box;
 }
 
-.sketch-container {
-  display: block;
-  border: 5px solid black;
-  max-width: 916px;
-  max-height: 916px;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.header {
+  background-color: red;
+  padding-bottom: 3rem;
+  width: 1000px;
+  height: 50px;
+}
+
+.heading {
+  text-align: center;
+}
+
+.main {
+  display: block;
+  width: 800px;
+  background-color: aliceblue;
+  border: 100px solid red;
+  border-top: 0;
+}
+
+.sketch-container {
+  display: block;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  box-shadow: 1px 1px 3px 3px rgb(216, 215, 215),
+    -1px -1px 3px 3px rgb(216, 215, 215);
+}
+
+/* FIXME min-height needs to be set dynamically */
 .row {
   display: flex;
   flex: auto;
+  min-height: 31.25px;
 }
 
 .pixel {
-  border: 1px solid black;
+  /* border: 0.25px solid rgb(173, 173, 173); */
   flex: auto;
   text-align: center;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  padding: 1rem;
+  background-color: gray;
+}
+
+.option-btn {
+  min-height: 50px;
+  border-radius: 15px;
 }
