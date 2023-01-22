@@ -19,11 +19,25 @@
         <button class="option-btn">shader mode</button>
         <button class="option-btn">lighten mode</button>
         <button class="option-btn">eraser mode</button>
-        <input type="range" min="1" max="64" />
+        <div class="slider-wrapper">
+          <label class="slider-label" for="grid-size-slider"
+            >Adjust Grid Size</label
+          >
+          <input
+            type="range"
+            min="1"
+            max="64"
+            value="16"
+            name="grid-size-slider"
+          />
+        </div>
+
         <button class="option-btn">clear canvas</button>
       </div>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <h3>Created with love by Austin 2023</h3>
+    </footer>
     <script src="./script.js"></script>
   </body>
 </html>
