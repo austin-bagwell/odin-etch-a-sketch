@@ -25,11 +25,42 @@ sketchContainer.insertAdjacentHTML("afterbegin", sketch.makeCanvas());
 const rows = document.querySelectorAll(".row");
 const pixels = document.querySelectorAll(".pixel");
 
-// TODO use event bubbling to add a new background color to e.target using this as the callback
-function colorPixel(color) {}
+// GLOBAL VARIABLES
+let currentColor = "black";
+let currentMode = "color";
 
-// should work like this to begin with, but use a named func in callback
-sketchContainer.addEventListener("click", function (e) {
-  console.log(`clicked on: `, e.target.classList);
-  e.target.style.backgroundColor = "black";
-});
+// setting the modes (color,eraser,rainbow,etc.)
+const modeToggles = document.querySelectorAll(".mode");
+
+function setMode(mode) {
+  currentMode = mode;
+}
+modeToggles.forEach((btn) =>
+  btn.addEventListener("click", (e) => {
+    const mode = e.target.id;
+    setMode(mode);
+    modeToggles.forEach((button) => {
+      button.classList.remove("active");
+    });
+    e.target.classList.toggle("active");
+  })
+);
+
+function randomColor() {
+  const r = Math.floor(Math.random() * 255).toString();
+  const g = Math.floor(Math.random() * 255).toString();
+  const b = Math.floor(Math.random() * 255).toString();
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+function setPixelToCurrentColor(e) {
+  if (currentMode === "eraser") {
+    currentColor = "white";
+  } else if (currentMode === "rainbow") {
+    currentColor = randomColor();
+  }
+  e.target.style.backgroundColor = currentColor;
+}
+
+// TODO implement click/drag instead of mouseover. yeah i know mouseover technically fulfills the Odin requiremnts but click/drag is much better UX
+sketchContainer.addEventListener("mouseover", setPixelToCurrentColor);

@@ -14,11 +14,11 @@
     <main class="main">
       <div class="sketch-container"></div>
       <div class="options">
-        <button class="option-btn">pen color</button>
-        <button class="option-btn">rainbow mode</button>
-        <button class="option-btn">shader mode</button>
-        <button class="option-btn">lighten mode</button>
-        <button class="option-btn">eraser mode</button>
+        <button class="option-btn mode active" id="color">pen color</button>
+        <button class="option-btn mode" id="rainbow">rainbow mode</button>
+        <button class="option-btn mode" id="shader">shader mode</button>
+        <button class="option-btn mode" id="lighten">lighten mode</button>
+        <button class="option-btn mode" id="eraser">eraser mode</button>
         <div class="slider-wrapper">
           <label class="slider-label" for="grid-size-slider"
             >Adjust Grid Size</label
@@ -32,7 +32,7 @@
           />
         </div>
 
-        <button class="option-btn">clear canvas</button>
+        <button class="option-btn" id="clear">clear canvas</button>
       </div>
     </main>
     <footer class="footer">

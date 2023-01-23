@@ -1,8 +1,9 @@
 /* TODO */
 /* Set row/pixel sizing dynamically -- always want to evenly fill the .sketch-container regardless of the number of pixels present or the size of the container 
+--- probably should use CSS grid for that. Means I'll need to adjust how I'm making the grid but that's okay
+*/
 
-USE GRID?*/
-
+/* TODO make color scheme less fugly */
 html {
   box-sizing: border-box;
   background-color: rgb(82, 82, 82);
@@ -74,7 +75,15 @@ body {
 }
 
 .option-btn:hover {
+  background-color: darkmagenta;
+}
+
+.option-btn.active {
   background-color: pink;
+}
+
+.option-btn:active {
+  background-color: darkorchid;
 }
 
 .slider-wrapper {
