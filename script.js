@@ -29,6 +29,14 @@ const pixels = document.querySelectorAll(".pixel");
 let currentColor = "black";
 let currentMode = "color";
 
+// colors
+function setColor(r, g, b) {
+  let color = `rgb (${r}, ${g}, ${b})`;
+  return color;
+}
+
+console.log(setColor(0, 0, 0));
+
 // setting the modes (color,eraser,rainbow,etc.)
 const modeToggles = document.querySelectorAll(".mode");
 
